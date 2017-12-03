@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170528080650) do
+ActiveRecord::Schema.define(version: 20171203001855) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20170528080650) do
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.integer "year"
+    t.datetime "release_date"
     t.string "slug"
     t.string "image"
     t.boolean "available", default: true
@@ -43,18 +43,31 @@ ActiveRecord::Schema.define(version: 20170528080650) do
     t.index ["slug"], name: "index_movies_on_slug", unique: true
   end
 
-  create_table "rent_carts", force: :cascade do |t|
+  create_table "premiere_tickets", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "movie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_premiere_tickets_on_movie_id"
+    t.index ["user_id"], name: "index_premiere_tickets_on_user_id"
+  end
+
+  create_table "premieres", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.date "prem_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "rent_items", force: :cascade do |t|
     t.integer "movie_id"
-    t.integer "rent_cart_id"
+    t.integer "renter_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "return_date"
     t.index ["movie_id"], name: "index_rent_items_on_movie_id"
-    t.index ["rent_cart_id"], name: "index_rent_items_on_rent_cart_id"
+    t.index ["renter_user_id"], name: "index_rent_items_on_renter_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,6 +87,7 @@ ActiveRecord::Schema.define(version: 20170528080650) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "total_credits"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

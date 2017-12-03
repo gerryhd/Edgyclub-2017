@@ -1,0 +1,2 @@
+class Premiere < ApplicationRecord
+end

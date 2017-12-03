@@ -10,6 +10,11 @@ describe User do
     FactoryGirl.build(:user, email: nil).should_not be_valid
   end
 
+  it "receives starting credits when creating user" do
+    new_user = FactoryGirl.create(:user)  # Remember it only happens during create
+    new_user.total_credits.should eq 50
+  end
+
   describe "password presence validation" do
 
     context "without password and confirmation" do

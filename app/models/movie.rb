@@ -3,11 +3,10 @@ class Movie < ApplicationRecord
   before_save { initialize_availability }
   before_validation { initialize_description }
 
-  validates_presence_of :title, :description, :year
+  validates_presence_of :title, :description
 
   mount_uploader :image, ImageUploader
 
-  has_many :rent_items
   def create_slug
     unless self.title.nil?
       self.slug = self.title.downcase.gsub(' ', '-')

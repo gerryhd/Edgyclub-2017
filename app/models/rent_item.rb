@@ -1,6 +1,6 @@
 class RentItem < ApplicationRecord
   belongs_to :movie
-  belongs_to :rent_cart
+  belongs_to :renter_user, class: :user
 
   validates :movie_id, uniqueness: {scope: :movie_id}
 

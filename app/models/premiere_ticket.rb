@@ -1,0 +1,2 @@
+class PremiereTicket < ApplicationRecord
+end
