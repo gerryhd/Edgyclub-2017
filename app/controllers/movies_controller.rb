@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   before_action :authenticate_user!, only: [:make_a_rent, :remove_rent_item, :empty_rents,
-                                            :confirm_rent,]
+                                            :confirm_rent]
   before_action :authenticate_admin!, only: [:new, :create, :edit, :update]
 
 
