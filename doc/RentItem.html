@@ -112,37 +112,6 @@
 
   
     <h2>
-      Class Method Summary
-      <small><a href="#" class="summary_toggle">collapse</a></small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#renting%3F-class_method" title="renting? (class method)">.<strong>renting?</strong>(movie_id, rent_cart_id)  &#x21d2; Boolean </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-    </ul>
-  
-    <h2>
       Instance Method Summary
       <small><a href="#" class="summary_toggle">collapse</a></small>
     </h2>
@@ -182,74 +151,6 @@
   
   
   
-
-  <div id="class_method_details" class="method_details_list">
-    <h2>Class Method Details</h2>
-
-    
-      <div class="method_details first">
-  <h3 class="signature first" id="renting?-class_method">
-  
-    .<strong>renting?</strong>(movie_id, rent_cart_id)  &#x21d2; <tt>Boolean</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-14
-15
-16
-17
-18
-19
-20
-21</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'app/models/rent_item.rb', line 14</span>
-
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_renting?'>renting?</span><span class='lparen'>(</span><span class='id identifier rubyid_movie_id'>movie_id</span><span class='comma'>,</span> <span class='id identifier rubyid_rent_cart_id'>rent_cart_id</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_movie'>movie</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="RentItem (class)">RentItem</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find_by'>find_by</span><span class='lparen'>(</span><span class='label'>movie_id:</span> <span class='id identifier rubyid_movie_id'>movie_id</span><span class='comma'>,</span> <span class='label'>rent_cart_id:</span> <span class='id identifier rubyid_rent_cart_id'>rent_cart_id</span><span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_movie'>movie</span>
-    <span class='kw'>return</span> <span class='kw'>true</span>
-  <span class='kw'>else</span>
-    <span class='kw'>return</span> <span class='kw'>false</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
@@ -294,7 +195,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sat Dec  2 16:28:45 2017 by
+  Generated on Sun Dec  3 14:01:08 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.0).
 </div>

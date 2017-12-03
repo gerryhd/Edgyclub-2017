@@ -70,13 +70,9 @@ href="https://sheltered-headland-16432.herokuapp.com/admins/sign_in">sheltered-h
 
 <pre class="code ruby"><code class="ruby">                      ---------------------------</code></pre>
 
-<p>Anyone interested in testing this should first reset the database with</p>
+<p>To start the database again</p>
 
-<p><code>rails db:migrate:reset</code></p>
-
-<p>then populate the database with</p>
-
-<p><code>rails:db:seed</code></p>
+<p><code>rake db:drop db:create db:migrate</code> <code>rake db:seed</code></p>
 
 <p>–</p>
 
@@ -97,7 +93,7 @@ necessary</p>
 </div></div>
 
       <div id="footer">
-  Generated on Sat Dec  2 16:28:45 2017 by
+  Generated on Sun Dec  3 14:01:08 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.0).
 </div>
