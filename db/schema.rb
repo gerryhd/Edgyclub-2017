@@ -32,10 +32,10 @@ ActiveRecord::Schema.define(version: 20171203001855) do
   end
 
   create_table "movies", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.text "description"
     t.datetime "release_date"
-    t.string "slug"
+    t.string "slug", null: false
     t.string "image"
     t.boolean "available", default: true
     t.datetime "created_at", null: false
@@ -44,18 +44,18 @@ ActiveRecord::Schema.define(version: 20171203001855) do
   end
 
   create_table "premiere_tickets", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "movie_id"
+    t.integer "user_id", null: false
+    t.integer "premiere_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["movie_id"], name: "index_premiere_tickets_on_movie_id"
+    t.index ["premiere_id"], name: "index_premiere_tickets_on_premiere_id"
     t.index ["user_id"], name: "index_premiere_tickets_on_user_id"
   end
 
   create_table "premieres", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.text "description"
-    t.date "prem_date"
+    t.date "prem_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -63,9 +63,9 @@ ActiveRecord::Schema.define(version: 20171203001855) do
   create_table "rent_items", force: :cascade do |t|
     t.integer "movie_id"
     t.integer "renter_user_id"
+    t.date "return_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date "return_date"
     t.index ["movie_id"], name: "index_rent_items_on_movie_id"
     t.index ["renter_user_id"], name: "index_rent_items_on_renter_user_id"
   end
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20171203001855) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.integer "months_of_membership", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "total_credits"
