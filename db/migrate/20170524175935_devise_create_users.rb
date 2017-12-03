@@ -32,6 +32,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       # t.datetime :locked_at
 
       t.integer :months_of_membership, default: 0
+      t.integer :total_credits, default: 50
       t.timestamps null: false
     end
 
