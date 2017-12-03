@@ -10,15 +10,10 @@
                           
                           ---------------------------
 
-Anyone interested in testing this should first
-reset the database with
+To start the database again
 
-` rails db:migrate:reset`
-
-then populate the database with
-
-` rails:db:seed`
-
+`rake db:drop db:create db:migrate`
+`rake db:seed`
 
 --
 

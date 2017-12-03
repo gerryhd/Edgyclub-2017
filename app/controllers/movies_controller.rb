@@ -14,20 +14,14 @@ class MoviesController < ApplicationController
     @movie = Movie.find_by(slug: params[:slug])
 
     unless (@movie.nil?)
-      @rent = current_rent
-      if (RentItem.renting?(@movie.id, current_rent.id))
-        flash.now[:info] = 'La película ya está en su lista.'
-      else
-
-        @rent_item = @rent.rent_items.create!(rent_cart: @rent, movie: @movie)
-
-        @rent.save
-        flash.now[:success] = "#{@movie.title} fue agregada a su lista."
-      end
+      result, message = add_to_rent_cart @movie
+      flash.now[result] = message
     end
-    @rent = current_rent
-    @rent_cart = current_rent.rent_items
-    @movies = Movie.paginate(page: params[:page], per_page: 4)
+
+    @rent_cart = current_rent_cart
+    #@rent = current_rent
+    #@rent_cart = current_rent.rent_items
+    #@movies = Movie.paginate(page: params[:page], per_page: 4)
 
     respond_to do |format|
       format.html
@@ -120,12 +114,23 @@ class MoviesController < ApplicationController
       [true,false].sample
     end
 
-    def current_rent
-
-      if current_user.rent_cart.nil?
-        current_user.rent_cart = RentCart.create!(user: current_user)
+    def rent_cart_items
+      @rent_cart_items = []
+      session[:rent_cart].each do |rent_item_id|
+        @rent_cart_items << Movie.find_by(movie_id: rent_item)
       end
-      current_user.rent_cart
+    end
+
+    def add_to_rent_cart(movie)
+      rent_cart = session[:rent_cart]
+      
+      if rent_car.include? movie
+        return :error, "La película ya está en su lista."
+      elsif rent_car.count >= 3
+        return :error, "¡No puede rentar más en una sola renta!"
+      else
+        session[:rent_cart] << movie.id
+      end
     end
 
     def movie_params

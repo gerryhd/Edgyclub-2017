@@ -27,7 +27,7 @@
 
             <%= button_to "Rentar", make_a_rent_path + "/#{movie.slug}", method: 'get' %>
         <% else %>
-          <div class="panel-footer text-center">(<%= movie.year %>)</div>
+          <div class="panel-footer text-center">(<%= movie.release_date %>)</div>
         <% end %>
       </div>
 

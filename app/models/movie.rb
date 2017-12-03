@@ -1,11 +1,16 @@
 class Movie < ApplicationRecord
-  before_save { create_slug }
-  before_save { initialize_availability }
+  before_validation { create_slug }
   before_validation { initialize_description }
-
+  before_save { initialize_availability }
+  
   validates_presence_of :title, :description
+  validates_uniqueness_of :slug
 
   mount_uploader :image, ImageUploader
+
+  def formatted_release_date
+    self.release_date.strftime("%B %Y")
+  end
 
   def create_slug
     unless self.title.nil?
