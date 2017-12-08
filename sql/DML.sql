@@ -152,6 +152,8 @@ VALUES      ('Coco',
 '2017-12-08 09:24:39.057328', 
 '2017-12-08 09:24:39.057328');
 
+-- too much to be formatted :(
+
 INSERT INTO "premieres" 
 ("title", "prem_date", "slug", "created_at", "updated_at") 
 VALUES ('Insidious: The Last Key', '2018-01-05', 'insidious:-the-last-key', '2017-12-08 09:24:39.245073', '2017-12-08 09:24:39.245073'),
@@ -176,6 +178,38 @@ VALUES ('Insidious: The Last Key', '2018-01-05', 'insidious:-the-last-key', '201
 ('Ready Player One', '2018-03-30', 'ready-player-one', '2017-12-08 09:24:42.727505', '2017-12-08 09:24:42.727505'),
 ;
 
+INSERT INTO "users" 
+("email", "encrypted_password", "confirmed_at", "months_of_membership", "total_credits", "member_type", "created_at", "updated_at") 
+VALUES ('joanny_schultz@hagenescormier.org', '$2a$11$Y0OTxcsGRsjQjIuu3jgcze3ASxZeGDalGL6k1Ro02iM.QYyqTwG6i', '2017-12-08 11:01:52.937172', 3, 558, 1, '2017-12-08 11:01:52.937082', '2017-12-08 11:01:52.937082'),
+('ashley@naderlynch.net', '$2a$11$gxLjNSDXHUd79qan6FmGC.J7eUooti5TBw/oFCiccRKcZveY3mAtG', '2017-12-08 11:01:53.242242', 12, 5558, 2, '2017-12-08 11:01:53.242174', '2017-12-08 11:01:53.242174'),
+('viviane.hamill@howe.net', '$2a$11$GyhAhYNBm1w2p.U2gf3NJOZnxCrRkcaPSJkTqcF0nkJYXLJAM6rFq', '2017-12-08 11:01:53.845943', 5, 1417, 1, '2017-12-08 11:01:53.845844', '2017-12-08 11:01:53.845844'),
+('dwight_anderson@kovacek.co', '$2a$11$08vqW7W76TLZqCwK6bB4/.fuypRTx2DcDKgHkTUWJeCyhyQ5rMjF2', '2017-12-08 11:01:54.170563', 4, 1809, 1, '2017-12-08 11:01:54.170503', '2017-12-08 11:01:54.170503'),
+('lavern@kirlin.org', '$2a$11$4Hr2jdcAM2nksNpKEW0rx.f.QgYd10JcgCgR5md0Vdd7iHE6Atvki', '2017-12-08 11:01:54.470692', 1, 1855, 1, '2017-12-08 11:01:54.470614', '2017-12-08 11:01:54.470614'),
+('shakira_pagac@bernierkonopelski.io', '$2a$11$voDO0d7BwN.WGb8LXgDUVOa6SPUEKgSV0qQ1/.W7pBwtCl3//MS5e', '2017-12-08 11:01:54.764883', 6, 802, 1, '2017-12-08 11:01:54.764773', '2017-12-08 11:01:54.764773'),
+('wilfrid@parker.info', '$2a$11$pgsLI.zU0asp7rYGK8WnmO4cusDjDdZsR/PySMvneRh4rqLNMVNfa', '2017-12-08 11:01:55.062060', 6, 1844, 1, '2017-12-08 11:01:55.061984', '2017-12-08 11:01:55.061984'),
+('grace@wintheiser.info', '$2a$11$x0.BCfCo3Vi1Oe1I5do58.zx8WzQLZV/fZNSiC1nnZC0B3ZE66H/6', '2017-12-08 11:01:55.685357', 12, 5530, 2, '2017-12-08 11:01:55.685241', '2017-12-08 11:01:55.685241'),
+('justina@yundtschneider.com', '$2a$11$szMYe6zCUtVe0rSn7zTl1.Jhx1JZWaXpgjSqYDfi/ZjYug5YS0Hq2', '2017-12-08 11:01:55.983094', 23, 0, '2017-12-08 11:01:55.983038', '2017-12-08 11:01:55.983038') ,
+('jacinto@conroy.net', '$2a$11$X1oQhsVLRD66mDrKHiSdIeUEgNdKg1e.P7m.GGOIdvRdDJ7fswaTm', '2017-12-08 11:01:56.296933', 12, 9298, 2, '2017-12-08 11:01:56.296875', '2017-12-08 11:01:56.296875'),
+('casimer@crona.com', '$2a$11$3H9/IRJrfUORx0ZmUbBHtO6cT8AmOUmiDmp6rd1rfzUXk4.5xcUOu', '2017-12-08 11:01:56.579555', 5, 2437, 1, '2017-12-08 11:01:56.579499', '2017-12-08 11:01:56.579499'),
+('katarina_roberts@williamson.io', '$2a$11$PxRrG6gmsPKPT5ByaqvPROfbzLg4y.KtuBlcVzq2/XYHFtkQmY7xS', '2017-12-08 11:01:56.870937', 12, 5150, 2, '2017-12-08 11:01:56.870870', '2017-12-08 11:01:56.870870'),
+('nicolas.funk@blick.name', '$2a$11$HmhshvNAN57xcoUn753e9uMC3VQrE/1cysHe8qiPMXEgH3BNoHXrq', '2017-12-08 11:01:57.153480', 12, 6837, 2, '2017-12-08 11:01:57.153425', '2017-12-08 11:01:57.153425'),
+('lesly@fadelsteuber.com', '$2a$11$M0ulwypuofPKHti1upiRcuzuMlux4HermDSLkEcdq9WwqipUVjk5i', '2017-12-08 11:01:57.876470', 6, 2885, 2, '2017-12-08 11:01:57.876414', '2017-12-08 11:01:57.876414'),
+('thora@dickimetz.biz', '$2a$11$UPoV6xM3hGWx7ZvBy.xtme6/5l8c6EKe4DMH9cOn5/BE3lh3bzf2O', '2017-12-08 11:01:58.203419', 5, 373, 1, '2017-12-08 11:01:58.203357', '2017-12-08 11:01:58.203357'),
+('oliver_green@swaniawskihills.biz', '$2a$11$YD6wnRBMjG/m3gXFkyc0ueOyCJOl2HRxqnScE/gt3OS101d2Mksce', '2017-12-08 11:01:58.545694', 12, 7931, 2, '2017-12-08 11:01:58.545637', '2017-12-08 11:01:58.545637'),
+('stephan.blick@bodestracke.name', '$2a$11$qKwMlzDdJZmDGwAFCBUXoueN.Hsv/jPr9fyo1R4EhzXb/LZ9D1lDS', '2017-12-08 11:01:58.860475', 2, 2404, 1, '2017-12-08 11:01:58.860397', '2017-12-08 11:01:58.860397')
+;
 
+-- users with free account (default), and they get 0 months of membership (default)
+INSERT INTO "users"
+("email", "encrypted_password", "confirmed_at", "total_credits", "created_at", "updated_at") 
+VALUES ('angeline@farrell.org', '$2a$11$oYQm8lPpDNJqBOmLZBbHdOyQ9r8Axfu5B/5RwZB45oyD6boj6sq52', '2017-12-08 11:01:53.551295', 78, '2017-12-08 11:01:53.551240', '2017-12-08 11:01:53.551240'),
+('janea@leschlubowitz.co', '$2a$11$MY03sFyTgHW843zHjrdKpOjaRYvp9LPY92eSXyS0dS5crMUYP7xk.', '2017-12-08 11:01:55.335933', 52, '2017-12-08 11:01:55.335843', '2017-12-08 11:01:55.335843'),
+('alverta_bashirian@lehner.info', '$2a$11$92PLgAWTQIUJX2rHtjzav.llKm8m7pjnnWUc5AKFsyhLqAEkbAAZa', '2017-12-08 11:01:57.490412', 54, '2017-12-08 11:01:57.490358', '2017-12-08 11:01:57.490358'),
 
+-- this one is for local testing purposes
+INSERT INTO "users" 
+("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") 
+VALUES ('gerry_hd@live.com.mx', '$2a$11$epG9FUEFAzOYvvP13.BBcO7MmTuSMfrw7EDhgEu/qVwWbPTk9iDuC', '2017-12-08 11:01:59.169410', '2017-12-08 11:01:59.169352', '2017-12-08 11:01:59.169352')
 
+-- admin. We did not add more because we thought it would be a little ilogical and pointless
+INSERT INTO "admins" ("email", "encrypted_password", "created_at", "updated_at") VALUES ('admin@homie.mx', '$2a$11$EF1vpFP21kqWnj9ubyaCTe3B.x9GtQyl3ib0A1WIfcFl9N1caBBVG', '2017-12-08 11:01:59.506113', '2017-12-08 11:01:59.506113') 

@@ -33,7 +33,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
 
       t.integer :months_of_membership, default: 0
       t.integer :total_credits, default: 50
-      t.integer :member_type
+      t.integer :member_type, default: 0 # 0 for this field represents a free account
       t.timestamps null: false
     end
 

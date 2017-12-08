@@ -70,11 +70,17 @@ end
   total_credits = [*0..100].sample  # First we assume it's a free account
 
   if member_type == :paid
+    puts 'its paid so it gets '
     total_credits = [*200..2500].sample
+    puts "#{total_credits} total credits and "
     months_of_membership = [1,2,3,4,5,6].sample
-  elsif member_type == :paid
+    puts "#{months_of_membership} months of membership "
+  elsif member_type == :premium
+    puts 'its premium so it gets '
     total_credits = [*1000..10000].sample
+    puts "#{total_credits} total credits and "
     months_of_membership = [6,12].sample
+    puts "#{months_of_membership} months of membership "
   end
 
   user = User.new(email: email, password: password, total_credits: total_credits, member_type: member_type, months_of_membership: months_of_membership)
