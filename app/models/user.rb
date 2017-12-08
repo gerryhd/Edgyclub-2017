@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   has_many :rent_items, foreign_key: :id
 
+  enum member_type: [:free, :paid, :premium]
+
   def grant_starting_credits
     self.total_credits ||= 50
   end

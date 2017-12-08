@@ -1,0 +1,57 @@
+<div class="col-lg-6 col-lg-offset-3 col-sm-10 col-sm-offset-1">
+
+    <div class="rent-list">
+      <div id="confirm-notice">
+        <%= render 'partials/checkout_errors' %>
+      </div>
+
+      <h2>Confirmar compra</h2>
+        <div class="container-fluid">
+          <h4>Películas</h4>
+          <% if @rent_cart.first.nil? %>
+              <i>No has agregado ninguna película. Agregue al menos una película para poder concretar la renta.</i>
+          <% end %>
+          <% @rent_cart.each do |rent_item| %>
+
+              <div class="col-lg-8 col-lg-offset-2 rent-item">
+                <div class="row">
+                  <div class="col-lg-6 col-sm-4 title">
+                    <%= rent_item.movie.title %>
+                  </div>
+                  <div class="col-lg-2 col-sm-2 title">
+                    <%= rent_item.return_date %>
+                  </div>
+                  <div class="col-lg-4 col-sm-4 delete"><%= link_to "x", remove_path(id: rent_item.movie.id),
+                                                  method: :post %>
+                  </div>
+                </div>
+              </div>
+
+          <% end %>
+        </div>
+
+        <% if @buying_ticket %>
+          <div class="container-fluid">
+            <h4>Ticket Estreno</h4>
+
+          </div>
+        <% end %>
+    </div>
+
+  </div>
+  <div class="vertical-menu">
+    <div class="rent-options">
+      <button class="btn btn-default" data-toggle="collapse" data-target="#catalogo">Agregar película</button>
+    </div>
+    <div class="rent-options">
+      <%= link_to "Vaciar lista", empty_rents_path, class: "btn btn-default" %>
+    </div>
+    <div class="rent-options">
+      <% if @rent_cart.first.nil? %>
+        <%= link_to "Concretar Renta", '#', class: "btn btn-danger disabled"%>
+      <% else %>
+          <%= link_to "Concretar Renta", confirm_rent_path, class: "btn btn-danger", remote: true %>
+      <% end %>
+    </div>
+  </div>
+</div>

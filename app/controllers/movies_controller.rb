@@ -18,7 +18,7 @@ class MoviesController < ApplicationController
       flash.now[result] = message
     end
 
-    @rent_cart = current_rent_cart
+    @rent_cart = rent_cart_items
     #@rent = current_rent
     #@rent_cart = current_rent.rent_items
     #@movies = Movie.paginate(page: params[:page], per_page: 4)
@@ -116,9 +116,14 @@ class MoviesController < ApplicationController
 
     def rent_cart_items
       @rent_cart_items = []
+
+      return @rent_cart_items if session[:rent_cart].nil?
+
       session[:rent_cart].each do |rent_item_id|
         @rent_cart_items << Movie.find_by(movie_id: rent_item)
       end
+
+      @rent_cart_items
     end
 
     def add_to_rent_cart(movie)

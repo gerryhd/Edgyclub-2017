@@ -2,7 +2,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def hello
-    render html: "hello, world!"
+    @movies = Movie.order('created_at').paginate(page: params[:page], per_page: 16)
+    @premieres = Premiere.order('created_at').paginate(page: params[:page], per_page: 16)
+     
+    render 'landing/index'
 
   end
 

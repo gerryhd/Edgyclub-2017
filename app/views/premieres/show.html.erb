@@ -2,21 +2,21 @@
   <div class="row">
     <div class="col-md-6 col-sm-12">
 
-      <% if @movie.image.catalog.url.nil? %>
+      <% if @premiere.image.catalog.url.nil? %>
           <%=image_tag("https://placehold.it/320x480?text=IMAGE",
                        class: "img-responsive center-block",
-                       alt: "Poster de #{@movie.title}")%>
+                       alt: "Poster de #{@premiere.title}")%>
       <% else %>
-          <%=image_tag( @movie.image.url,
+          <%=image_tag( @premiere.image.url,
                         class: "img-responsive center-block",
-                        alt: "Poster de #{@movie.title}")%>
+                        alt: "Poster de #{@premiere.title}")%>
       <% end %>
     </div>
     <div class="col-md-6 col-sm-12 movie-info">
-      <h2><%= @movie.title %></h2>
-      <h4><%= @movie.year %></h4>
-      <p><%= @movie.description %></p>
-      <%= button_to "Rentar", make_a_rent_path + "/#{@movie.slug}", method: 'get' %>
+      <h2><%= @premiere.title %></h2>
+      <h4><%= @premiere.release_date %></h4>
+      <p><%= @premiere.description %></p>
+      <%= button_to "Rentar", make_a_rent_path + "/#{@premiere.slug}", method: 'get' %>
 
     </div>
 
