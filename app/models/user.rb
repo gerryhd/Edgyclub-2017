@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
   before_create { grant_starting_credits }
+  before_save { skip_confirmation! }
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
