@@ -64,12 +64,12 @@ ActiveRecord::Schema.define(version: 20171203192931) do
 
   create_table "rent_items", force: :cascade do |t|
     t.integer "movie_id"
-    t.integer "renter_user_id"
+    t.integer "user_id"
     t.date "return_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["movie_id"], name: "index_rent_items_on_movie_id"
-    t.index ["renter_user_id"], name: "index_rent_items_on_renter_user_id"
+    t.index ["user_id"], name: "index_rent_items_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
