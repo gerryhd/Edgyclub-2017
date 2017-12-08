@@ -16,12 +16,12 @@
               <div class="col-lg-8 col-lg-offset-2 rent-item">
                 <div class="row">
                   <div class="col-lg-6 col-sm-4 title">
-                    <%= rent_item.movie.title %>
+                    <%= rent_item.title %>
                   </div>
                   <div class="col-lg-2 col-sm-2 title">
-                    <%= rent_item.return_date %>
+                    <%= rent_item.formatted_release_date %>
                   </div>
-                  <div class="col-lg-4 col-sm-4 delete"><%= link_to "x", remove_path(id: rent_item.movie.id),
+                  <div class="col-lg-4 col-sm-4 delete"><%= link_to "x", remove_path(title: rent_item.title),
                                                   method: :post %>
                   </div>
                 </div>

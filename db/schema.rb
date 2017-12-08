@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 20171203192931) do
     t.string "unconfirmed_email"
     t.integer "months_of_membership", default: 0
     t.integer "total_credits", default: 50
+    t.integer "member_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

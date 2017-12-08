@@ -4,14 +4,14 @@ class MoviesController < ApplicationController
   before_action :authenticate_admin!, only: [:new, :create, :edit, :update]
 
 
-  helper_method :current_rent
+  helper_method :rent_cart_items
   helper_method :should_it_pass?
   helper_method :clean_movie_list
 
   def make_a_rent
     @page = params[:page]
     @movies = Movie.order('created_at').paginate(page: params[:page], per_page: 4)
-    @movie = Movie.find_by(slug: params[:slug])
+    @movie = Movie.find_by(slug: params[:slug]) ||
 
     unless (@movie.nil?)
       result, message = add_to_rent_cart @movie
@@ -68,7 +68,7 @@ class MoviesController < ApplicationController
   end
 
   def remove_rent_item
-    if(RentItem.renting?(params[:id], current_rent.id))
+    if session[:rent_cart].include(params[:id])
       current_rent.rent_items.find_by(movie_id: params[:id]).destroy
 
     else
@@ -111,7 +111,7 @@ class MoviesController < ApplicationController
       end
     end
     def should_it_pass?
-      [true,false].sample
+      [true, true, true, false].sample
     end
 
     def rent_cart_items
@@ -119,25 +119,26 @@ class MoviesController < ApplicationController
 
       return @rent_cart_items if session[:rent_cart].nil?
 
-      session[:rent_cart].each do |rent_item_id|
-        @rent_cart_items << Movie.find_by(movie_id: rent_item)
+      session[:rent_cart].each do |rent_item_title|
+        @rent_cart_items << Movie.find_by(title: rent_item_title)
       end
 
       @rent_cart_items
     end
 
-    def add_to_rent_cart(movie)
+    def add_to_rent_cart(item)
       rent_cart = session[:rent_cart]
       
-      if rent_car.include? movie
+      if rent_cart.include? item
         return :error, "La película ya está en su lista."
-      elsif rent_car.count >= 3
+      elsif rent_car.count >= 5
         return :error, "¡No puede rentar más en una sola renta!"
       else
-        session[:rent_cart] << movie.id
+        session[:rent_cart] << item.id
       end
     end
 
+    
     def movie_params
       params.require(:movie).permit(:title, :year, :description, :image)
     end

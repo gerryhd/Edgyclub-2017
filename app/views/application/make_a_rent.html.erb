@@ -1,0 +1,10 @@
+
+<div class="row">
+
+
+  <div id="catalogo" class="container <% if @page != nil %>collapse in<% else %>collapse<% end %>" style="width: 75%;">
+    <%= render 'partials/movie_catalog', renting: true %>
+  </div>
+
+  <%= render 'partials/checkout' %>
+</div>

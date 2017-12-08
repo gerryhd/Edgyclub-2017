@@ -1,5 +1,5 @@
 <%= text_field_tag "search_query", nil, placeholder: "Filtrar..", class: 'form-control' %>
-<%= will_paginate %>
+<%= will_paginate @movies %>
 <div class="row row-eq-height hidden-sm-down">
 
 <% @movies.each do |movie| %>

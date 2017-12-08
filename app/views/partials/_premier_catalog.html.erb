@@ -1,0 +1,35 @@
+<%= text_field_tag "search_query", nil, placeholder: "Filtrar..", class: 'form-control' %>
+<%= will_paginate @premiers %>
+<div class="row row-eq-height hidden-sm-down">
+
+<% @premiers.each do |premier| %>
+    <div class="col-lg-3 hidden-xs movie-panel">
+      <div class="panel panel-info text-center">
+        <div class="panel-heading"><strong><%= premier.title %></strong>
+          
+        </div>
+        <div class="panel-body">
+          <% if premier.image.catalog.url.nil? %>
+            <%=link_to image_tag("http://via.placeholder.com/160x240",
+                                 class: "img-responsive center-block",
+                                 alt: "Poster de #{premier.title}"),
+                       premier %>
+          <% else %>
+              <%=link_to image_tag( premier.image.catalog.url,
+                                   class: "img-responsive center-block",
+                                   alt: "Poster de #{premier.title}"),
+                         premier %>
+          <% end %>
+        </div>
+        <% if local_assigns[:renting] %>
+
+            <%= button_to "Rentar", make_a_rent_path + "/#{premier.slug}", method: 'get' %>
+        <% else %>
+          <div class="panel-footer text-center">(<%= premier.formatted_release_date %>)</div>
+        <% end %>
+      </div>
+
+    </div>
+
+<% end %>
+</div>

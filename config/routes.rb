@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :admins
-  get '/rent_a_movie/delete', to: 'movies#empty_rents', as: "empty_rents"
-  get '/rent_a_movie/confirm', to: 'movies#confirm_rent', as: "confirm_rent"
-  get '/rent_a_movie(/:slug)', to: 'movies#make_a_rent', as: "make_a_rent"
-  post '/rent_a_movie', to: 'movies#remove_rent_item', as: "remove"
+  get '/make_a_rent/delete', to: 'application#empty_rents', as: "empty_rents"
+  get '/make_a_rent/confirm', to: 'application#confirm_rent', as: "confirm_rent"
+  get '/make_a_rent(/:slug)', to: 'application#make_a_rent', as: "make_a_rent"
+  post '/make_a_rent', to: 'application#remove_rent_item', as: "remove"
 
 
 
@@ -20,7 +20,8 @@ Rails.application.routes.draw do
   devise_for :users, skip: [:sessions]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'movies#index'
+  root 'application#index'
   resources :movies, param: :slug
+  resources :premieres, param: :slug
   post 'movies/new', to: 'movies#create', as: "create_movie"
 end
