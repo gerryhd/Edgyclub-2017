@@ -25,8 +25,11 @@ movies = [{:title => 'Coco',:description => 'En el pequeño pueblo de Santa Ceci
           {:title => 'Suburbicon', :description => 'Un misterio criminal ambientado en un tranquilo pueblo familiar de Suburbicon durante los años 50, donde lo mejor y lo peor de la humanidad se ve reflejado en las vidas de la gente corriente. Cuando un allanamiento de morada se vuelve mortal, una familia aparentemente perfecta empezará a hacer uso del chantaje, la venganza y la traición.', :release_date => Date.strptime('10/27/2017', '%m/%d/%Y')},
           {:title => 'Beauty and the Beast', :description => 'Adaptación en imagen real del clásico de Disney "La bella y la bestia", que cuenta la historia de Bella (Emma Watson), una joven brillante y enérgica, que sueña con aventuras y un mundo que se extiende más allá de los confines de su pueblo en Francia. Independiente y reservada, Bella no quiere saber nada con el arrogante y engreído Gastón, quien la persigue sin descanso. Todo cambia un día cuando su padre Maurice (Kevin Kline) es encarcelado en el castillo de una horrible Bestia, y Bella se ofrece a intercambiarse con su padre y queda recluida en el castillo. Rápidamente se hace amiga del antiguo personal del lugar, que fue transformado en objetos del hogar tras una maldición lanzada por una hechicera.', :release_date => Date.strptime('03/16/2017', '%m/%d/%Y')},
           {:title => 'Cars 3', :description => 'Sorprendido por una nueva generación de corredores ultrarrápidos, el legendario Rayo McQueen queda relegado repentinamente del deporte que tanto ama. Para retomar su carrera, va a necesitar la ayuda de una joven mecánica de carreras, Cruz Ramírez, que tiene su propio plan para ganar, además de la inspiración del fallecido Fabuloso Hudson Hornet y un par de giros inesperados. ¡Y para probar que el nº95 no está ni mucho menos acabado, el campeón tendrá que poner a prueba su valía en el gran circuito de la Copa Piston!', :release_date => Date.strptime('06/15/2017', '%m/%d/%Y')}
-        
-]
+          {:title => 'Cars 4', :description=> 'pelicula numero 17', :release_date => Date.strptime('06/15/2017', '%m/%d/%Y')},
+          {:title => 'Cars 5', :description=> 'pelicula numero 18', :release_date => Date.strptime('06/15/2017', '%m/%d/%Y')},
+          {:title => 'Cars 6', :description=> 'pelicula numero 19', :release_date => Date.strptime('06/15/2017', '%m/%d/%Y')},
+          {:title => 'Cars 7', :description=> 'pelicula numero 20', :release_date => Date.strptime('06/15/2017', '%m/%d/%Y')},
+        ]
 
 movies.each do |movie|
   Movie.find_or_create_by(movie)
