@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 
   before_create { grant_starting_credits }
-  before_save { skip_confirmation! }
+  before_create { confirm }
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -14,6 +14,10 @@ class User < ApplicationRecord
 
   def grant_starting_credits
     self.total_credits ||= 50
+  end
+
+  def confirm 
+    self.skip_confirmation!
   end
 end
 
