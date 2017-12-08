@@ -37,7 +37,22 @@ premieres = [
   {title: 'Day of the dead: Bloodline', prem_date: Date.strptime("01/05/2018", '%m/%d/%Y')},
   {title: "Molly's Game", prem_date: Date.strptime("12/25/2018", '%m/%d/%Y')},
   {title: "Molly's Game", prem_date: Date.strptime("01/05/2018", '%m/%d/%Y')},
-  {title: "Star Wars: The Last Jedi", prem_date: Date.strptime("12/15/2018", '%m/%d/%Y')}
+  {title: "Star Wars: The Last Jedi", prem_date: Date.strptime("12/15/2018", '%m/%d/%Y')},
+  {title: "Jumanji: Welcome to the Jungle", prem_date: Date.strptime("12/20/2017", '%m/%d/%Y')},
+  {title: "Avengers: Infinity War", prem_date: Date.strptime("04/25/2018",'%m,%d%Y')},
+  {title: "Black Panther", prem_date: Date.strptime("02/09/2018",'%m,%d%Y')},
+  {title: "The new Mutants", prem_date: Date.strptime("04/13/2018", "%m%d%Y")},
+  {title: "Untitled Deadpool Sequel", prem_date: Date.strptime("05/31/2018",'%m%d%Y')},
+  {title: "Ant-Man and the Wasp", prem_date: Date.strptime("07/06/2018",'%m%d%Y')},
+  {title: "Jurassic World: Fallen Kingdom", prem_date: Date.strptime("06/22/2018",'%m%d%Y')},
+  {title: "The Incredibles 2", prem_date: Date.strptime("06/14/2018",'%m%d%Y')},
+  {title: "Pacific Rim: Insurrección", prem_date: Date.strptime("03/22/2018",'%m%d%Y')},
+  {title: "Venom", prem_date: Date.strptime("10/05/2018",'%m%d%Y')},
+  {title: "Tom Raider", prem_date: Date.strptime("03/16/2018",'%m%d%Y')},
+  {title: "Aquaman", prem_date: Date.strptime("12/21/2018",'%m%d%Y')},
+  {title: "Maze Runner: The Death Cure", prem_date: Date.strptime("01/26/2018",'%m%d%Y')},
+  {title: "Predator", prem_date: Date.strptime("08/03/2018",'%m%d%Y')},
+  {title: "Ready Player One", prem_date: Date.strptime("03/30/2018",'%m%d%Y')}
 ]
 
 premieres.each do |premier|
