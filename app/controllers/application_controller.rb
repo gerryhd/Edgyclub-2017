@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  before_action :authenticate_user!, only: [:make_a_rent, :remove_rent_item, :empty_rents,
+                                            :confirm_rent]
+
   def index
     @movies = Movie.order('created_at').paginate(page: params[:page], per_page: 8)
     @premiers = Premiere.order('created_at').paginate(page: params[:page], per_page: 8)

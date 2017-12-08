@@ -64,7 +64,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @movie = Movie.find_by(slug: params[:slug])
+    @item = Movie.find_by(slug: params[:slug])
   end
 
   def remove_rent_item
