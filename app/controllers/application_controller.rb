@@ -59,6 +59,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
+    initialize_rent_cart
     movies_path
   end
 
@@ -87,13 +88,14 @@ class ApplicationController < ActionController::Base
     return @rent_cart_items if session[:rent_cart].nil?
 
     session[:rent_cart].each do |rent_item_title|
-      @rent_cart_items << Movie.find_by(movie_id: rent_item) || Premiere.find_by(title: rent_item_title)
+      @rent_cart_items << Movie.find_by(title: rent_item_title) || Premiere.find_by(title: rent_item_title)
     end
 
     @rent_cart_items
   end
 
   def add_to_rent_cart(item)
+    session[:rent_cart] ||= []
     rent_cart = session[:rent_cart]
     
     if rent_cart.include? item

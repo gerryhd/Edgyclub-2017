@@ -1,0 +1,7 @@
+$('#confirm-notice').html("<%= j ( render 'partials/movie_errors', using_ajax: true) %>");
+$('#notices').slideDown(350);
+<% if @redirect %>
+setTimeout(function(){
+    $( location ).attr("href", '<%= j ( root_url ) %>');
+}, 2000);
+<% end %>
